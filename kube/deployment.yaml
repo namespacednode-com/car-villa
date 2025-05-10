@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: car-villa
+  labels:
+    app: car-villa
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: car-villa
+  template:
+    metadata:
+      labels:
+        app: car-villa
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: car-villa-service
+spec:
+  selector:
+    app: car-villa
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: ClusterIP
