@@ -18,17 +18,4 @@ spec:
       - name: nginx
         image: nginx:latest
         ports:
-        - containerPort: 8080
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: car-villa-service
-spec:
-  selector:
-    app: car-villa
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8080
-  type: ClusterIP
+        - containerPort: 80
