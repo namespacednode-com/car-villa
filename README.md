@@ -16,7 +16,7 @@ This guide provides a step-by-step workflow for deploying the Car Villa applicat
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/namespacednode-com/frontend.git
+git clone https://github.com/namespacednode-com/car-villa.git
 cd frontend
 ```
 
